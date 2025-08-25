@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Verificación Quirúrgica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="checklist">
+
+    <h1>LISTA DE VERIFICACIÓN QUIRÚRGICA</h1>
+
+    <!-- Sección ENTRADA -->
+    <h2>ENTRADA (Recepción del paciente)</h2>
+    <ul>
+      <li><span class="checkbox" data-value="true"></span> El paciente ha confirmado su identidad</li>
+      <li><span class="checkbox" data-value="false"></span> El sitio quirúrgico</li>
+      <li><span class="checkbox" data-value=""></span> El procedimiento</li>
+      <li><span class="checkbox" data-value=""></span> Su consentimiento prequirúrgico</li>
+      <li><span class="checkbox" data-value=""></span> Demarcación del sitio / No procede</li>
+    </ul>
+
+    <p><strong>Hora:</strong> __________ - Antes de la inducción de la anestesia<br>
+    <em>(Circulante y Anestesiólogo/a)</em></p>
+
+    <ul>
+      <li><span class="checkbox" data-value=""></span> Riesgo de hemorragia &gt; 500 ml adultos / 7 ml/kg niños</li>
+      <li><span class="checkbox" data-value=""></span> Vía aérea difícil / riesgo de aspiración</li>
+      <li><span class="checkbox" data-value=""></span> Se ha completado el control de la seguridad de la anestesia</li>
+      <li><span class="checkbox" data-value=""></span> Pulsioxímetro colocado y en funcionamiento</li>
+    </ul>
+
+    <!-- Sección PAUSA QUIRÚRGICA -->
+    <h2>ANTES DE LA INCISIÓN CUTÁNEA (Pausa Quirúrgica)</h2>
+    <ul>
+      <li><span class="checkbox" data-value=""></span> Miembros del equipo presentes</li>
+      <li><span class="checkbox" data-value=""></span> Cirujano, anestesiólogo y circulante confirman verbalmente identidad, sitio y procedimiento</li>
+      <li><span class="checkbox" data-value=""></span> Previsión de eventos críticos</li>
+      <li><span class="checkbox" data-value=""></span> Profilaxis antibiótica en los últimos 60 minutos</li>
+    </ul>
+
+    <!-- Sección SALIDA -->
+    <h2>ANTES DE QUE EL PACIENTE SALGA DEL QUIRÓFANO (Salida)</h2>
+    <ul>
+      <li><span class="checkbox" data-value=""></span> Nombre del procedimiento realizado</li>
+      <li><span class="checkbox" data-value=""></span> Recuento de gasas y agujas correcto</li>
+      <li><span class="checkbox" data-value=""></span> Etiquetado de las muestras</li>
+      <li><span class="checkbox" data-value=""></span> Refuerzo de profilaxis ATB</li>
+      <li><span class="checkbox" data-value=""></span> El paciente tiene alergias conocidas</li>
+    </ul>
+
+    <p><strong>Observaciones:</strong> ________________________________________________</p>
+
+  </div>
+
+  <script>
+    // Render checkboxes dynamically
+    document.querySelectorAll('.checkbox').forEach(el => {
+      const val = el.getAttribute('data-value');
+      if (val === 'true') {
+        el.textContent = '✓';
+        el.classList.add('check-yes');
+      } else if (val === 'false') {
+        el.textContent = '✗';
+        el.classList.add('check-no');
+      } else {
+        el.textContent = '☐';
+        el.classList.add('check-empty');
+      }
+    });
+  </script>
+</body>
+</html>
